@@ -1,0 +1,111 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.botao1 {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+    font-weight: bold;
+}
+
+.botoes-row {
+    margin: 0 auto;
+    width: 280px;
+    flex-direction: row;
+    display: flex;
+}
+
+.botao2 {
+    background-color: red;
+    color: #fff;
+    font-size: 30px;
+    border: none;
+    padding: 0 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.botao1:hover {
+    background-color: #0056b3;
+}
+
+.botao2:hover {
+    background-color: #c04e46;
+}
+
+/* Estilos específicos para o navbar */
+.navbar {
+    background-color: #333;
+    padding: 10px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar li {
+    margin-right: 20px;
+}
+
+.navbar li:last-child {
+    margin-right: 0;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Estilos específicos para listCars.html */
+.container {
+    margin: 20px auto;
+    max-width: 90%; /* Alterado para preencher 90% da largura da tela */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.car-list {
+    margin-top: 20px;
+}
+
+.car-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.car-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0056b3;
+}
+
+.car-info {
+    display: flex;
+    justify-content: space-between;
+}

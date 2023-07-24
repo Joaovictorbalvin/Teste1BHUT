@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Controla como as paginas vão ficar rederizadas em dispositivos moveis e uma forma grotesca de responsividade --> 
+    <title>BHUT - Teste visualizar carros</title> <!-- Titulo do site --> 
+
+    <link rel="icon" href="./images/logo.jpg"/> <!-- Logo do site --> 
+    <link rel="stylesheet" href="./styles/listCar.css"> <!-- css da pagina para dar um visual personalizado --> 
+    
+</head>
+
+<body> <!-- corpo da page --> 
+
+    <nav class="navbar">
+        <ul>
+          <li><a href="createCar.html">Criar Carro</a></li>
+          <li><a href="listCar.html">Visualizar Lista</a></li>
+          <li><a href="logCar.html">Logs</a></li>
+        </ul>
+      </nav>
+
+    <h1>Visualizar Carros</h1>   <!-- Titulo da page --> 
+
+    <div class="botoes-row"> <!-- Fiz uma div para colocar os botões lado a lado --> 
+    <button class="botao1" onclick="fetchCarsData()">Obter Lista de Carros</button> <!-- Botao1 para acionar a requisição chamando o metodo criado em javascript --> 
+    <button class="botao2" onclick="clearCarsData()">X</button> <!-- Botao2 para limpar a lista chamando o metodo criado em javascript --> 
+    </div>
+
+    <div class="car-list" id="carsData"></div> <!-- Dados da API impresso nessa Div e styles para organizar certinho --> 
+
+    <script src="./JS/visualizarCar.js"></script> <!-- Referenciei a pagina onde estao o metodos do JS --> 
+   
+</body>
+
+</html>

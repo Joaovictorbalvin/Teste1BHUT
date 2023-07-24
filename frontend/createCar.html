@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Controla como as paginas vão ficar rederizadas em dispositivos moveis e uma forma grotesca de responsividade --> 
+  <title>BHUT - Teste criar carros</title> <!-- Titulo do site --> 
+
+  <link rel="icon" href="./images/logo.jpg"/> <!-- Logo do site --> 
+  <link rel="stylesheet" href="./styles/criarcarro.css"> <!-- css da pagina para dar um visual personalizado --> 
+</head>
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="createCar.html">Criar Carro</a></li>
+      <li><a href="listCar.html">Visualizar Lista</a></li>
+      <li><a href="logCar.html">Logs</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Cadastro de Carros</h1>
+    
+    <label for="title">Modelo:</label>
+    <input type="text" id="title" name="title"><br>
+
+    <label for="brand">Marca:</label>
+    <input type="text" id="brand" name="brand"><br>
+
+    <label for="price">Preço:</label>
+    <input type="text" id="price" name="price"><br>
+
+    <label for="age">Ano:</label>
+    <input type="number" id="age" name="age"><br>
+
+    <button onclick="createCar()">Criar Carro</button>
+
+    <div id="response"></div>
+  </div>
+
+  <script src="./JS/createCar.js"></script>
+</body>
+</html>
