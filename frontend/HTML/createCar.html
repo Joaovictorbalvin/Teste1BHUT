@@ -9,34 +9,34 @@
   <link rel="stylesheet" href="../styles/criarcarro.css"> <!-- css da pagina para dar um visual personalizado --> 
 </head>
 <body>
-  <nav class="navbar">
+  <nav class="navbar">  <!-- Barra de navegação entre paginas --> 
     <ul>
-      <li><a href="createCar.html">Criar Carro</a></li>
-      <li><a href="listCar.html">Visualizar Lista</a></li>
-      <li><a href="logCar.html">Logs</a></li>
+      <li><a href="createCar.html">Criar Carro</a></li>  <!--Titulos dos links da navbar-->
+      <li><a href="listCar.html">Visualizar Lista</a></li>  <!--Titulos dos links da navbar-->
+      <li><a href="logCar.html">Logs</a></li>  <!--Titulos dos links da navbar-->
     </ul>
   </nav>
 
   <div class="container">
-    <h1>Cadastro de Carros</h1>
+    <h1>Cadastro de Carros</h1>  <!-- Titulo da page --> 
     
-    <label for="title">Modelo:</label>
-    <input type="text" id="title" name="title"><br>
+    <label for="title">Modelo:</label>  <!-- Titulo do input --> 
+    <input type="text" id="title" name="title"><br>  <!-- Input do modelo --> 
 
-    <label for="brand">Marca:</label>
-    <input type="text" id="brand" name="brand"><br>
+    <label for="brand">Marca:</label>  <!-- Titulo da input --> 
+    <input type="text" id="brand" name="brand"><br>  <!-- Input da marca --> 
 
-    <label for="price">Preço:</label>
-    <input type="text" id="price" name="price"><br>
+    <label for="price">Preço:</label>  <!-- Titulo do preço --> 
+    <input type="text" id="price" name="price"><br>  <!-- Input do preço --> 
 
-    <label for="age">Ano:</label>
-    <input type="number" id="age" name="age"><br>
+    <label for="age">Ano:</label>  <!-- Titulo do Ano --> 
+    <input type="number" id="age" name="age"><br>  <!-- Input do ano --> 
 
-    <button onclick="createCar()">Criar Carro</button>
+    <button onclick="createCar()">Criar Carro</button>  <!-- Botão para enviar um POST para a API --> 
 
     <div id="response"></div>
   </div>
 
-  <script src="../JS/createCar.js"></script>
+  <script src="../JS/createCar.js"></script>  <!-- Referenciei a pagina onde estao o metodos do JS --> 
 </body>
 </html>

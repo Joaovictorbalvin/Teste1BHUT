@@ -1,70 +1,55 @@
-// log.test.js
+const mongoose = require('mongoose'); //Biblioteca do MongoDB
+const Log = require('../models/Log'); //Importa a estrutura do Mongodb
 
-const mongoose = require('mongoose');
-const Log = require('../models/Log');
-
-describe('Log Model', () => {
-  beforeAll(async () => {
-    // Connect to the MongoDB database
-    await mongoose.connect('mongodb+srv://joaovictorferreiramatias01:vitinhoma@teste.ijp3xcu.mongodb.net/?retryWrites=true&w=majority', {
+describe('Log Model', () => { //Aqui um argumento string que descreve o que esta sendo testado, dentro desse bloco sera executado varios testes.
+  beforeAll(async () => { //permite executar um bloco de codigos antes de todos os testes serem iniciados.
+    await mongoose.connect('mongodb+srv://joaovictorferreiramatias01:vitinhoma@teste.ijp3xcu.mongodb.net/?retryWrites=true&w=majority', { //Conecta o mongoDB por meio da URL
       useNewUrlParser: true,
-      useUnifiedTopology: true,
+      useUnifiedTopology: true, //opções recomendadas pela mongoDB
     });
   });
 
-  afterAll(async () => {
-    // Close the database connection after all tests are completed
-    await mongoose.connection.close();
+  afterAll(async () => { //permite executar um bloco de codigos depois de todos os testes serem finalizados.
+    await mongoose.connection.close(); //Fecha a conexão do mongoDB depois do teste ser concluido
   });
 
-  afterEach(async () => {
-    // Remove all documents from the Log collection after each test
-    await Log.deleteMany({});
+  afterEach(async () => { //permite executar um bloco de codigos depois de todos os testes serem finalizados.
+    await Log.deleteMany({}); //Deleta todos os Log testes depois de serem concluidos.
   });
 
-  it('should create a new Log instance', async () => {
-    // Create some sample data
-    const data = {
+  it('deve criar uma nova instância de log', async () => { //Aqui definimos o primeiro argumento de teste.
+
+    const data = { //Criar alguns dados de exemplo.
       id: '123',
       data_hora: new Date('2023-07-23T12:34:56'),
       car_id: '456',
     };
 
-    // Create a new Log instance using the model's constructor
-    const log = new Log(data);
+    const log = new Log(data); //Criar uma nova instância de Log usando o construtor do modelo
 
-    // Save the Log instance
-    await log.save();
+    await log.save(); //Salvar a instância de log
 
-    // Find the saved log in the database
-    const savedLog = await Log.findOne({ id: data.id });
+    const savedLog = await Log.findOne({ id: data.id }); //Localizar o log salvo no banco de dados
 
-    // Verify that the returned log object is an instance of Log
-    expect(savedLog).toBeInstanceOf(Log);
+    expect(savedLog).toBeInstanceOf(Log); //verifica se o objeto chamado savedLog e um log valido seguindo a estrutura esperado para o registro se for valido passa no teste se for invalido falha no teste.
 
-    // Verify that the log object has the correct properties
-    expect(savedLog.id).toBe(data.id);
-    expect(savedLog.data_hora.toISOString()).toBe(data.data_hora.toISOString());
-    expect(savedLog.car_id).toBe(data.car_id);
+    expect(savedLog.id).toBe(data.id); //verifica se a id do log salvo no banco de dados e igual ao id do objeto data.
+    expect(savedLog.data_hora.toISOString()).toBe(data.data_hora.toISOString()); //verifica se a data_hora do log salvo no banco de dados e igual a data_hora do objeto data
+    expect(savedLog.car_id).toBe(data.car_id); //verifica se o car_id do log salvo no banco de dados e igual a car_id do objeto data.
   });
 
-  it('should have a default value for data_hora', async () => {
-    // Create some sample data without specifying the data_hora property
-    const dataWithoutDate = {
+  it('deve ter um valor padrão para data_hora', async () => { //Aqui definimos o primeiro argumento de teste.
+    const dataWithoutDate = { //Criar alguns dados de exemplo sem especificar a propriedade data_hora
       id: '123',
       car_id: '456',
     };
 
-    // Create a new Log instance without specifying the data_hora property
-    const log = new Log(dataWithoutDate);
+    const log = new Log(dataWithoutDate); //Criar uma nova instância de log sem especificar a propriedade data_hora.
 
-    // Save the Log instance
-    await log.save();
+    await log.save(); // //Salvar a instância de log
 
-    // Find the saved log in the database
-    const savedLog = await Log.findOne({ id: dataWithoutDate.id });
+    const savedLog = await Log.findOne({ id: dataWithoutDate.id }); //Localizar o log salvo no banco de dados
 
-    // Verify that the data_hora property is set to the default value (Date.now())
-    expect(savedLog.data_hora).toEqual(expect.any(Date));
+    expect(savedLog.data_hora).toEqual(expect.any(Date)); //Verifique se a propriedade data_hora está definida como o valor padrão (Date.now())
   });
 });

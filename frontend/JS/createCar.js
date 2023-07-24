@@ -1,28 +1,28 @@
-async function createCar() {
-  const title = document.getElementById('title').value;
-  const brand = document.getElementById('brand').value;
-  const price = document.getElementById('price').value;
-  const age = document.getElementById('age').value;
+async function createCar() { //Criamos uma funçao assicrona com o async.
+  const title = document.getElementById('title').value; //Ele obtem o id do Input do HTML, value e pra pegar o valor que o usuario definiu no input e salvar no variavel.
+  const brand = document.getElementById('brand').value; //Ele obtem o id do Input do HTML, value e pra pegar o valor que o usuario definiu no input e salvar no variavel.
+  const price = document.getElementById('price').value; //Ele obtem o id do Input do HTML, value e pra pegar o valor que o usuario definiu no input e salvar no variavel.
+  const age = document.getElementById('age').value; //Ele obtem o id do Input do HTML, value e pra pegar o valor que o usuario definiu no input e salvar no variavel.
 
-  const carData = {
-    title: title,
-    brand: brand,
-    price: price,
-    age: parseInt(age),
+  const carData = { //
+    title: title, //Titulo no caso é o modelo do carro ele pega o valor e define e salva na API 
+    brand: brand, //Brand no caso é o marca do carro ele pega o valor e define e salva na API 
+    price: price, //Price no caso é o price do carro ele pega o valor e define e salva na API 
+    age: parseInt(age), //Age no caso é o Ano do carro ele pega o valor e define e salva na API.
   };
 
   try {
-    const response = await fetch('http://localhost:3000/api/createCar', {
-      method: 'POST',
+    const response = await fetch('http://localhost:3000/api/createCar', { //Aqui fazemos uma requisiçao, chamando um funçao fetch, await para esperar que a requisição seja concluida antes de prosseguir. É a reposta da requisição será salva na variavel 
+      method: 'POST', //Metodo de POST, POST e usado para criar uma data no banco de dados.
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(carData),
+      body: JSON.stringify(carData), //Aqui converte o carData para uma String JSON
     });
 
-    const responseData = await response.json();
-    const responseDiv = document.getElementById('response');
-   // Após criar o carro com sucesso, exibir a mensagem formatada na div 'responseDiv'
+    const responseData = await response.json(); //Essa variavel contem a reposta usando o fetch, aqui usamos o metodo json.
+    const responseDiv = document.getElementById('response'); // aqui obtemos a ID no HTML da Div, permite que o codigo manipule ou exiba a resposta da requisiçao no DOM
+  
 responseDiv.innerHTML =// Após criar o carro com sucesso, exibir a mensagem formatada na div 'responseDiv'
 responseDiv.innerHTML = `
   <p style="text-align: center; color: green;">
@@ -33,8 +33,8 @@ responseDiv.innerHTML = `
     <strong style="color: black;">Preço:</strong> <span style="color: black;">${responseData.price}</span>, 
     <strong style="color: black;">Ano:</strong> <span style="color: black;">${responseData.age}</span>
   </p>`;
-  } catch (error) {
-    console.error('Erro ao criar carro:', error);
+  } catch (error) { //Catch para lidar com o erro, usamos o try para entrelaçar os codigos em um bloco.
+    console.error('Erro ao criar carro:', error); //Aparece um log do erro no caso nao foi possivel criar um carro na API.
     const responseDiv = document.getElementById('response');
     responseDiv.innerHTML = 'Ocorreu um erro ao criar o carro.';
   }
@@ -43,9 +43,9 @@ responseDiv.innerHTML = `
 
 }
 
-function clearForm() {
-  document.getElementById("title").value = "";
-  document.getElementById("brand").value = "";
-  document.getElementById("price").value = "";
-  document.getElementById("age").value = "";
+function clearForm() { //Função limpar Formulario
+  document.getElementById("title").value = ""; //Aqui limpa o input pelo id referenciado no HTML
+  document.getElementById("brand").value = ""; //Aqui limpa o input pelo id referenciado no HTML
+  document.getElementById("price").value = ""; //Aqui limpa o input pelo id referenciado no HTML
+  document.getElementById("age").value = ""; //Aqui limpa o input pelo id referenciado no HTML
 }
