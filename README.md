@@ -26,6 +26,6 @@
 
 2. Abra o Postman e informe a URL necessária para verificar se a API está requisitando no servidor.
 
-## Caso queira utilizar o Jest para testa os codigos.
+## Caso queira utilizar o Jest para testar os codigos.
 
 1. Com o terminal aberto execute o jest com o comando "npx jest".
