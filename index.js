@@ -9,7 +9,7 @@ const port = 3000; //Defini uma porta onde o servidor sera executado para o esta
 require('dotenv').config(); // Carregar as variáveis de ambiente do arquivo .env
 
 require('./src/models/Log'); //Carregar a estrutura log definido no banco de dados
-require('./db'); //Aqui mostrara se o banco de dados esta conectado quando executar o server.
+require('./src/database/db'); //Aqui mostrara se o banco de dados esta conectado quando executar o server.
 
 const httpServer = createServer(app); //usnado a funçao createserver criamos o servidor HTTP, passamos a instancia app como argumento para conseguir lidar com as requisiçoes.
 
