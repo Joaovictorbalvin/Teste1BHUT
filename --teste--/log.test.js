@@ -1,5 +1,5 @@
 const mongoose = require('mongoose'); //Biblioteca do MongoDB
-const Log = require('../models/Log'); //Importa a estrutura do Mongodb
+const Log = require('../src/models/Log'); //Importa a estrutura do Mongodb
 
 describe('Log Model', () => { //Aqui um argumento string que descreve o que esta sendo testado, dentro desse bloco sera executado varios testes.
   beforeAll(async () => { //permite executar um bloco de codigos antes de todos os testes serem iniciados.

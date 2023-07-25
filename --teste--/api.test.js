@@ -1,7 +1,7 @@
 const request = require('supertest'); //Biblioteca do jest
 const app = require('../index'); //Define o caminho do servidor 
 const mongoose = require('mongoose'); //Bibilioteca do mongodb
-const Log = require('../models/Log'); //Importa a estrutura usada para armazenamento de logs
+const Log = require('../src/models/Log'); //Importa a estrutura usada para armazenamento de logs
 
 const testDBURI = 'mongodb+srv://joaovictorferreiramatias01:vitinhoma@teste.ijp3xcu.mongodb.net/?retryWrites=true&w=majority'; //Conecta o mongoDB por meio da URL
 
